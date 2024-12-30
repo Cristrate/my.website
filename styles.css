@@ -25,10 +25,9 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(32, 255, 255, 0.08) 1px, transparent 1px),
-    radial-gradient(circle at 25% 25%, rgba(32, 255, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(32, 255, 255, 0.06) 2px, transparent 2px);
+  background-image: radial-gradient(circle at 50% 50%, rgba(32, 255, 255, 0.08) 1px, transparent 1px),
+                     radial-gradient(circle at 25% 25%, rgba(32, 255, 255, 0.05) 1px, transparent 1px),
+                     radial-gradient(circle at 75% 75%, rgba(32, 255, 255, 0.06) 2px, transparent 2px);
   background-size: 50px 50px, 30px 30px, 40px 40px;
   pointer-events: none;
   opacity: 0.6;
@@ -49,4 +48,162 @@ body::before {
   box-shadow: var(--neon-glow);
 }
 
-/* Restul stilurilor rămân aici... */
+.header h1 {
+  font-style: italic;
+  text-transform: capitalize;
+  margin: 0;
+  text-shadow: var(--neon-glow);
+}
+
+.nav {
+  background: rgba(0, 89, 89, 0.9);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--neon-glow);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-shadow: var(--neon-glow);
+}
+
+.nav a:hover {
+  color: #20ffff;
+  text-shadow: 0 0 10px #20ffff;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/image.png');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.services, .about {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about {
+  background: rgba(245, 246, 250, 0.9);
+  border-radius: 10px;
+  margin: 2rem auto;
+  box-shadow: var(--neon-glow);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.5rem;
+  box-shadow: var(--neon-glow);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--neon-glow);
+  transition: all 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(32, 255, 255, 0.8);
+}
+
+.service-card ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.service-card li {
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  background: var(--secondary);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.button {
+  background: var(--accent);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 1rem;
+  box-shadow: var(--neon-glow);
+}
+
+.button i {
+  font-size: 1.2em;
+}
+
+.button:hover {
+  background: #005555;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(32, 255, 255, 0.8);
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: var(--neon-glow);
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
