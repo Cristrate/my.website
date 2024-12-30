@@ -1,0 +1,52 @@
+:root {
+  --primary: #004D4D;
+  --secondary: #005959;
+  --accent: #006666;
+  --neon-glow: 0 0 7px rgba(32, 255, 255, 0.6), 
+               0 0 10px rgba(32, 255, 255, 0.4), 
+               0 0 21px rgba(32, 255, 255, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #002626, #003333, #004D4D, #005959, #006666);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(32, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 25% 25%, rgba(32, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(32, 255, 255, 0.06) 2px, transparent 2px);
+  background-size: 50px 50px, 30px 30px, 40px 40px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.header {
+  background: rgba(0, 77, 77, 0.9);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--neon-glow);
+}
+
+/* Restul stilurilor rămân aici... */
