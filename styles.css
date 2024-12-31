@@ -1,358 +1,124 @@
-<html><head><base href="." />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Istrate I. Cristina - Birou expert contabil</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<style>
-:root {
-  --primary: #004D4D;
-  --secondary: #005959;
-  --accent: #006666;
-  --neon-glow: 0 0 7px rgba(32, 255, 255, 0.6), 
-               0 0 10px rgba(32, 255, 255, 0.4), 
-               0 0 21px rgba(32, 255, 255, 0.2);
-}
-
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: linear-gradient(135deg, #002626, #003333, #004D4D, #005959, #006666);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  position: relative;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(32, 255, 255, 0.08) 1px, transparent 1px),
-    radial-gradient(circle at 25% 25%, rgba(32, 255, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(32, 255, 255, 0.06) 2px, transparent 2px);
-  background-size: 50px 50px, 30px 30px, 40px 40px;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.header {
-  background: rgba(0, 77, 77, 0.9);
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  box-shadow: var(--neon-glow);
-}
-
-.header h1 {
-  font-style: italic;
-  text-transform: capitalize;
-  margin: 0;
-  text-shadow: var(--neon-glow);
-}
-
-.nav {
-  background: rgba(0, 89, 89, 0.9);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(5px);
-  box-shadow: var(--neon-glow);
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s;
-  text-shadow: var(--neon-glow);
-}
-
-.nav a:hover {
-  color: #20ffff;
-  text-shadow: 0 0 10px #20ffff;
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/image.png');
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.services, .about {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.services h2 {
-  color: white;
-  text-align: center;
-}
-
-.about {
-  background: rgba(245, 246, 250, 0.9);
-  border-radius: 10px;
-  margin: 2rem auto;
-  box-shadow: var(--neon-glow);
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-badge {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  margin: 0.5rem;
-  box-shadow: var(--neon-glow);
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.service-card {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: var(--neon-glow);
-  transition: all 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(32, 255, 255, 0.8);
-}
-
-.service-card ul {
-  text-align: left;
-  padding-left: 20px;
-}
-
-.service-card li {
-  margin-bottom: 0.5rem;
-}
-
-.contact {
-  background: var(--secondary);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.button {
-  background: var(--accent);
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 1rem;
-  box-shadow: var(--neon-glow);
-}
-
-.button i {
-  font-size: 1.2em;
-}
-
-.button:hover {
-  background: #005555;
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(32, 255, 255, 0.8);
-}
-
-footer {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  box-shadow: var(--neon-glow);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.social-link {
-  color: white;
-  font-size: 1.5rem;
-  transition: all 0.3s;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background: var(--accent);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: var(--neon-glow);
-}
-
-.social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(32, 255, 255, 0.8);
-}
-
-@media (max-width: 768px) {
-  .nav ul {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-}
-</style>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <base href="." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicii profesionale de contabilitate oferite de Istrate I. Cristina, membru CECCAR, cu peste 15 ani experiență.">
+    <meta name="keywords" content="contabilitate, expert contabil, CECCAR, servicii fiscale, consultanță contabilă">
+    <meta name="author" content="Istrate I. Cristina">
+    <title>Istrate I. Cristina - Birou Expert Contabil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Mută stilurile într-un fișier extern -->
 </head>
 <body>
+    <header class="header">
+        <h1>Istrate I. Cristina - Birou Expert Contabil</h1>
+    </header>
 
-<header class="header">
-  <h1>Istrate I. Cristina - Birou Expert Contabil</h1>
-</header>
+    <nav class="nav" aria-label="Navigație principală">
+        <ul>
+            <li><a href="#despre">Despre mine</a></li>
+            <li><a href="#servicii">Servicii</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav class="nav">
-  <ul>
-    <li><a href="#despre">Despre mine</a></li>
-    <li><a href="#servicii">Servicii</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <section class="hero" role="banner">
+        <div>
+            <h2>Servicii Profesionale de Contabilitate</h2>
+            <p>Soluții complete pentru afacerea dumneavoastră</p>
+            <a href="https://calendly.com" class="button" target="_blank" rel="noopener noreferrer">
+                Programează o întâlnire profesională
+            </a>
+        </div>
+    </section>
 
-<section class="hero">
-  <div>
-    <h2>Servicii Profesionale de Contabilitate</h2>
-    <p>Soluții complete pentru afacerea dumneavoastră</p>
-    <a href="https://calendly.com" class="button">Programează o întâlnire profesională</a>
-  </div>
-</section>
+    <section class="about" id="despre">
+        <div class="about-content">
+            <h2>Despre mine</h2>
+            <span class="about-badge">Membru CECCAR</span>
+            <span class="about-badge">15+ ani experiență</span>
+            <p>
+                Cu o experiență de peste 15 ani în domeniul financiar-contabil, ofer servicii profesionale de înaltă calitate. 
+                Calitatea serviciilor mele este garantată de statutul de membru CECCAR (Corpul Experților Contabili și Contabililor Autorizați din România).
+            </p>
+        </div>
+    </section>
 
-<section class="about" id="despre">
-  <div class="about-content">
-    <h2>Despre mine</h2>
-    <span class="about-badge">Membru CECCAR</span>
-    <span class="about-badge">15+ ani experiență</span>
-    <p>Cu o experiență de peste 15 ani în domeniul financiar-contabil, ofer servicii profesionale de înaltă calitate. Calitatea serviciilor mele este garantată de statutul de membru CECCAR (Corpul Experților Contabili și Contabililor Autorizați din România).</p>
-  </div>
-</section>
+    <section class="services" id="servicii" aria-labelledby="servicii-heading">
+        <h2 id="servicii-heading">Serviciile mele</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Contabilitate Financiară și de Gestiune</h3>
+                <ul>
+                    <li>Evidență contabilă completă</li>
+                    <li>Registru încasări și plăți</li>
+                    <li>Întocmire registru jurnal</li>
+                    <li>Registru de evidență fiscală</li>
+                    <li>Jurnale TVA</li>
+                    <li>Balanță de verificare</li>
+                    <li>Bilanț contabil</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Resurse Umane și Salarizare</h3>
+                <ul>
+                    <li>Întocmire contracte de muncă</li>
+                    <li>Încărcare Revisal online</li>
+                    <li>State de plată salarii</li>
+                    <li>Administrare dosare de personal</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Consultanță și Asistență Fiscală</h3>
+                <ul>
+                    <li>Stabilirea obligațiilor de plată lunare/trimestriale</li>
+                    <li>Pregătirea documentelor pentru plăți</li>
+                    <li>Depunere declarații fiscale online</li>
+                    <li>Creare cont SPV pentru ANAF</li>
+                    <li>Asistență pentru sistemul e-factura</li>
+                    <li>Consultanță transmitere facturi în sistemul ANAF</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section class="services" id="servicii">
-  <h2>Serviciile mele</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Contabilitate Financiară și de Gestiune</h3>
-      <ul>
-        <li>Evidență contabilă completă</li>
-        <li>Registru încasări și plăți</li>
-        <li>Întocmire registru jurnal</li>
-        <li>Registru de evidență fiscală</li>
-        <li>Jurnale TVA</li>
-        <li>Balanță de verificare</li>
-        <li>Bilanț contabil</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <h3>Resurse Umane și Salarizare</h3>
-      <ul>
-        <li>Întocmire contracte de muncă</li>
-        <li>Încărcare Revisal online</li>
-        <li>State de plată salarii</li>
-        <li>Administrare dosare de personal</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <h3>Consultanță și Asistență Fiscală</h3>
-      <ul>
-        <li>Stabilirea obligațiilor de plată lunare/trimestriale</li>
-        <li>Pregătirea documentelor pentru plăți</li>
-        <li>Depunere declarații fiscale online</li>
-        <li>Creare cont SPV pentru ANAF</li>
-        <li>Asistență pentru sistemul e-factura</li>
-        <li>Consultanță transmitere facturi în sistemul ANAF</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <section class="contact" id="contact">
+        <h2>Contactează-mă</h2>
+        <p>Sunt aici pentru a vă ajuta cu orice întrebare legată de serviciile mele</p>
+        <a href="tel:+40727820691" class="button">
+            <i class="fas fa-phone"></i>
+            Sună Acum: 0727 820 691
+        </a>
+        <a href="mailto:b.e.c.istrate.i.cristina@gmail.com" class="button">
+            <i class="fas fa-envelope"></i>
+            Email: b.e.c.istrate.i.cristina@gmail.com
+        </a>
+        <a href="https://wa.me/40727820691" class="button" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp: 0727 820 691
+        </a>
+        <a href="https://t.me/Cristrate" class="button" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram"></i>
+            Telegram: @Cristrate
+        </a>
+    </section>
 
-<section class="contact" id="contact">
-  <h2>Contactează-mă</h2>
-  <p>Sunt aici pentru a vă ajuta cu orice întrebare legată de serviciile mele</p>
-  <a href="tel:+40727820691" class="button">
-    <i class="fas fa-phone"></i>
-    Sună Acum: 0727 820 691
-  </a>
-  <a href="mailto:b.e.c.istrate.i.cristina@gmail.com" class="button">
-    <i class="fas fa-envelope"></i>
-    Email: b.e.c.istrate.i.cristina@gmail.com
-  </a>
-  <a href="https://wa.me/40727820691" class="button">
-    <i class="fab fa-whatsapp"></i>
-    WhatsApp: 0727 820 691
-  </a>
-  <a href="https://t.me/Cristrate" class="button">
-    <i class="fab fa-telegram"></i>
-    Telegram: @Cristrate
-  </a>
-</section>
-
-<footer>
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/cristina-istrate-accountant" class="social-link" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="https://www.facebook.com/cristina.istrate.accountant" class="social-link" target="_blank" title="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/cristina.istrate.accountant" class="social-link" target="_blank" title="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-  <p>&#169; 2024 Expert Contabil. Toate drepturile rezervate.</p>
-  <p>Adresă: Aleea Învățătorilor Nr. 11, Brăila, Județul Brăila</p>
-</footer>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/cristina-istrate-accountant" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/cristina.istrate.accountant" class="social-link" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/cristina.istrate.accountant" class="social-link" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>&#169; 2024 Expert Contabil. Toate drepturile rezervate.</p>
+        <p>Adresă: Aleea Învățătorilor Nr. 11, Brăila, Județul Brăila</p>
+    </footer>
+</body>
+</html>
